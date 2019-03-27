@@ -1,0 +1,41 @@
+0  0  0  0  0
+0  0  bl pu 0
+0  br 0  0  0
+ye 0  0  or 0
+0  0  re 0  0
+
+b  0  0 0  0
+or 0  0 wh ye
+0  0  0 0  o
+0  br 0 pu b
+0  re 0 0  0
+
+pu 0  0  0  0
+0  0  0  b  0
+0  gr 0  wh 0
+0  0  0  0  0
+0  bl ye 0  0
+
+b  0  0  0  0
+0  re 0  0  0
+0  0  0  br bl
+wh or 0  0  0
+0  0  0  0  0
+
+wh 0  pu 0  0
+0  0  0  re 0
+0  gr 0  0  0
+0  0  0  0  0
+0  or ye 0  0
+
+0  pu 0  0  0
+0  0  bl 0  0
+0  br 0  0   ye
+0  0  gr pu  0
+0  0  0  0   0
+
+0  br  0 0 0
+0  re 0  0  0
+pu 0  0  gr 0
+0  gr 0  0  0
+0  0  b  0  0
