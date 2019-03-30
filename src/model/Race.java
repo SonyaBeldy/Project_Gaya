@@ -1,24 +1,47 @@
 package model;
 
 public enum  Race {
-    Terrans(15, 4, 3, 1, 8, 0, 1, 1, 0, 0),
-    Tacklons(0, 0, 0, 0, 0, 0, 0 , 0, 0, 0),
-    HadschHallas(0, 0, 0, 0, 0, 0, 0 , 0, 0, 0),
-    Xenoc(0, 0, 0, 0, 0, 0, 0 , 0, 0, 0);
+    Terrans,
+    Tacklons,
+    HadschHallas,
+    Xenoc;
 
     private int[] terrCost;
+    private int[] science;
     private int[] resources;
     private int[] income;
-    private int gaiaformersCount;
+    private int[] buildsCount;
 
-    Race(int gold, int ore, int science, int kki, int energy, int g_d, int o_d, int s_d, int k_d, int e_d) {
+    Race() {
 
-        resources = new int[]{gold, ore, science, kki, energy};
-        income = new int[]{g_d, o_d, s_d, k_d, e_d};
-
-        switch (this) {
-            case Terrans:
-                terrCost = new int[]{2, 0, 3, 2, 1, 1, 3};
+        switch (name()) {
+            case "Terrans":
+                resources = new int[]{15, 4, 3, 1, 8}; //gold, ore, science, kki,
+                income = new int[]{0, 1, 1, 0, 0}; //
+                terrCost = new int[]{2, 0, 3, 2, 1, 1, 3}; //b, bl, br, or, re, wh, ye
+                science = new int[]{0, 0, 0, 1, 0, 0};
+                buildsCount = new int[]{0, 0, 0, 0, 0};
+                break;
+            case "Tacklons":
+                resources = new int[]{15, 4, 3, 1, 8};
+                income = new int[]{0, 1, 1, 0, 0};
+                terrCost = new int[]{1, 3, 0, 2, 3, 2, 1};
+                science = new int[]{0, 0, 0, 0, 0, 0};
+                buildsCount = new int[]{0, 0, 0, 0, 2};
+                break;
+            case "HadschHallas":
+                resources = new int[]{15, 4, 3, 1, 8};
+                income = new int[]{0, 1, 1, 0, 0};
+                terrCost = new int[]{3, 1, 3, 1, 0, 2, 2};
+                science = new int[]{0, 0, 0, 0, 1, 0};
+                buildsCount = new int[]{0, 0, 0, 0, 2};
+                break;
+            case "Xenoc":
+                resources = new int[]{15, 4, 3, 1, 8};
+                income = new int[]{0, 1, 1, 0, 0};
+                terrCost = new int[]{2, 3, 1, 1, 2, 3, 0};
+                science = new int[]{0, 0, 1, 0, 0, 0};
+                buildsCount = new int[]{0, 0, 0, 0, 3};
                 break;
         }
     }
@@ -33,5 +56,13 @@ public enum  Race {
 
     public int[] getIncome() {
         return income;
+    }
+
+    public int[] getScience() {
+        return science;
+    }
+
+    public int[] getBuildsCount() {
+        return buildsCount;
     }
 }

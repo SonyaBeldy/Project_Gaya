@@ -18,7 +18,7 @@
                   <Image url="@resourses/images/sky.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="881.0" fitWidth="1566.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="881.0" fitWidth="1373.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@resourses/images/fog1.png" />
                </image>
@@ -30,70 +30,22 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="86.0" prefWidth="1566.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <ImageView fitHeight="59.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
-               <image>
-                  <Image url="@resourses/images/sience/1.0.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="59.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="165.0">
-               <image>
-                  <Image url="@resourses/images/s2.png" />
-               </image>
-            </ImageView>
-            <AnchorPane prefHeight="249.0" prefWidth="315.0" AnchorPane.bottomAnchor="76.0">
-               <children>
-                  <HBox prefHeight="249.0" prefWidth="301.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <VBox spacing="4.0">
-                           <children>
-                              <ImageView fitHeight="59.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resourses/images/sience/1.4.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="59.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resourses/images/sience/1.3.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="59.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resourses/images/sience/1.2.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="59.0" layoutX="10.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resourses/images/sience/1.1.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </VBox>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                     </children>
-                  </HBox>
-               </children>
-            </AnchorPane>
-            <Button fx:id="endTurn" layoutX="1397.0" layoutY="253.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="158.0" style="-fx-background-color: transparent; -fx-text-fill: #a1a1a1;" text="Конец хода" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
+      <HBox fx:id="hBoxBot" layoutX="14.0" layoutY="808.0" prefHeight="54.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+      <HBox fx:id="hBox" layoutX="14.0" layoutY="553.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="14.0" />
+      <Button fx:id="endTurn" layoutX="1394.0" layoutY="808.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="158.0" style="-fx-background-color: transparent; -fx-text-fill: #a1a1a1;" text="Конец хода" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
       <StackPane prefHeight="92.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="69.0" prefWidth="203.0">
+            <AnchorPane fx:id="resourcesPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="69.0" prefWidth="203.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resourses/images/res.png" />
-                     </image>
-                  </ImageView>
+                  <HBox fx:id="resBox" layoutX="-201.0" layoutY="42.0" prefHeight="26.0" prefWidth="603.0" spacing="4.0" AnchorPane.leftAnchor="-201.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </children>
       </StackPane>
+      <VBox fx:id="buildsBox" layoutX="1452.0" layoutY="225.0" prefHeight="336.0" prefWidth="100.0" AnchorPane.rightAnchor="0.0" />
    </children>
 </AnchorPane>
