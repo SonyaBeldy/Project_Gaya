@@ -26,6 +26,28 @@ public class Map {
         createMap();
     }
 
+    public void setCheckedFalse(){
+        for (int i = 0; i < hexs.size(); i++) {
+            for (int j = 0; j < hexs.get(i).getHexagons().size(); j++) {
+                hexs.get(i).getHexagons().get(j).setChecked(false);
+            }
+        }
+    }
+
+    public void setNormOpacity () {
+        for (int i = 0; i < hexs.size(); i++) {
+            for (int j = 0; j < hexs.get(i).getHexagons().size(); j++) {
+                Hexagon hexagon = hexs.get(i).getHexagons().get(j);
+                hexagon.addEventFilter(MouseEvent.MOUSE_ENTERED, event -> hexagon.setStyle("-fx-opacity: 0.9"));
+                hexagon.addEventFilter(MouseEvent.MOUSE_EXITED, event -> hexagon.setStyle("-fx-opacity: 0.7"));
+                hexagon.setOpacity(0.7);
+                hexagon.setEffect(null);
+
+            }
+        }
+    }
+
+
     private void createMap() {
         double size = 31;
         double xc = main.getPrefWidth()/2-size*4, yc = main.getPrefHeight()/2 - size*2;
@@ -38,6 +60,19 @@ public class Map {
         hexs.add(createHexagon(6, size, xc + size2*3 , yc + Math.sqrt(3)/2*  size2*8));
         hexs.add(createHexagon(3, size, xc - size2*4.5 , yc + Math.sqrt(3)/2*size2*7));
 
+    }
+
+    public Hexagon findHexagon(Point point) {
+        for (int i = 0; i < hexs.size(); i++) {
+            for (int j = 0; j < hexs.get(i).getHexagons().size(); j++) {
+                Hexagon hexagon = hexs.get(i).getHexagons().get(j);
+                if ((point.x > hexagon.getLayoutX()) && (point.x < (hexagon.getLayoutX() + hexagon.getFitWidth())) && (point.y > hexagon.getLayoutY()) && (point.y < (hexagon.getLayoutY() + hexagon.getFitHeight()))) {
+                    return hexagon;
+                }
+
+            }
+        }
+        return null;
     }
 
     Hex createHexagon(int id, double size, double x, double y){ // вызов factory, инициальзация всех гексов
@@ -71,8 +106,14 @@ public class Map {
                 zm += 1;
                 //System.out.println("p " + point.x + " " + point.y);
                 String s = (planetMatrix.get(id)[(int) point.x][(int) point.y]);
+
+
+//                hexagon.setPoint(new Point(point.x, point.y));
+
+
                 s = factory.getPlanet(s);
                 if(!s.equals("none")) {
+
                     hexagon.setPlanet(s);
                     //System.out.println("s " + s);
                     hexagon.setImage(new Image(s));

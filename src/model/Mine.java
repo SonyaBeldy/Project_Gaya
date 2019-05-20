@@ -1,5 +1,6 @@
 package model;
 
+import controller.Game;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -9,10 +10,11 @@ public class Mine extends Build {
     int[] income = {0, 1, 1, 0, 1, 1, 1, 1, 1};
     int ind = 5;
 
-    public Mine() {
-        setImage(new Image("./view/resourses/images/buildings/5.png"));
+    public Mine(Player player) {
+        setImage(new Image("./view/resourses/images/buildings/" + player.getRace() + "/" + "5.png"));
         setFitWidth(27);
         setFitHeight(27);
+
     }
 
     public Mine(int gold, int ore, String url, int[] income, int ind) {
@@ -33,8 +35,12 @@ public class Mine extends Build {
     public void add(Player player) {
         player.getBuildsCount()[ind - 1]++;
         player.getIncome()[1] += income[player.getBuildsCount()[ind - 1]];
-        player.getResources()[0] -= gold;
-        player.getResources()[1] -= ore;
+        if(player.getMineStartCount() == 0) {
+            player.getResources()[0] -= gold;
+            player.getResources()[1] -= ore;
+        } else {
+            player.setMineStartCount(player.getMineStartCount() - 1);
+        }
     }
 
     public boolean isBuildIsOver(Player player) {
@@ -58,5 +64,9 @@ public class Mine extends Build {
 
     public int getInd() {
         return ind;
+    }
+
+    public void setInd(int ind) {
+        this.ind = ind;
     }
 }

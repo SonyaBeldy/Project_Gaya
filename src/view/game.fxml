@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="881.0" maxWidth="1566.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="881.0" prefWidth="1566.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Game">
    <children>
@@ -28,8 +29,54 @@
                   <Image url="@resourses/images/stars_2.png" />
                </image>
             </ImageView>
+            <ImageView fx:id="e" fitHeight="150.0" fitWidth="200.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@resourses/images/e.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="69.0" fitWidth="64.0" layoutX="1500.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="109.0">
+               <image>
+                  <Image url="@resourses/images/res/score.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="scoreText" fill="#d7d6d6" layoutX="1503.9999873638153" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER" wrappingWidth="55.999993681907654" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="127.0">
+               <font>
+                  <Font name="Akrobat-Bold" size="24.0" />
+               </font>
+            </Text>
+            <HBox fx:id="energyBox" layoutX="32.0" layoutY="37.0" prefHeight="33.0" prefWidth="183.0" spacing="4.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="35.0" />
+            <Button fx:id="ebtn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Button" AnchorPane.leftAnchor="132.0" AnchorPane.topAnchor="92.0">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resourses/images/ebtn.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
+      <HBox fx:id="goalsBox" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+      <Button fx:id="otherBtn" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="128.0" prefWidth="43.0" style="-fx-background-color: transparent;" text="Button" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="250.0">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@resourses/images/1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="mapBtn" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="128.0" prefWidth="43.0" style="-fx-background-color: transparent;" text="Button" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="160.0">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+               <image>
+                  <Image url="@resourses/images/1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <VBox fx:id="mapBox" prefHeight="600.0" prefWidth="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="54.0" />
+      <VBox fx:id="otherBox" layoutX="24.0" layoutY="64.0" prefHeight="600.0" prefWidth="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="54.0" />
       <HBox fx:id="hBoxBot" layoutX="14.0" layoutY="808.0" prefHeight="54.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
       <HBox fx:id="hBox" layoutX="14.0" layoutY="553.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="14.0" />
       <Button fx:id="endTurn" layoutX="1394.0" layoutY="808.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="158.0" style="-fx-background-color: transparent; -fx-text-fill: #a1a1a1;" text="Конец хода" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">

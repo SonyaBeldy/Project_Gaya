@@ -2,9 +2,9 @@ package controller;
 
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import model.*;
-
 import java.util.ArrayList;
 
 public class PaneHandler implements EventHandler<MouseEvent> {
@@ -16,7 +16,22 @@ public class PaneHandler implements EventHandler<MouseEvent> {
     private Hexagon hexagon;
     private Button button;
     ScienceImg scienceImg;
+    ImageView imageView;
     private ArrayList<Mine>[] builds;
+    private int ind;
+
+    public PaneHandler (Events event, Game game, int ind) {
+        this.event = event;
+        this.ind = ind;
+        this.game = game;
+    }
+
+    public PaneHandler (Events event, Game game, int ind, ImageView imageView) {
+        this.event = event;
+        this.ind = ind;
+        this.game = game;
+        this.imageView = imageView;
+    }
 
     public PaneHandler (Events event, Game game) {
         this.event = event;
@@ -46,10 +61,28 @@ public class PaneHandler implements EventHandler<MouseEvent> {
     @Override
     public void handle(MouseEvent event) {
         switch (this.event) {
-            case scienceMapClick:
+            case techBtnClick:
+                gameRules.techBtnClick(game, ind, imageView);
+                break;
+            case energTransfer:
+                gameRules.energyTransfer(game);
+                break;
+            case techClick:
+                gameRules.getTech(game, scienceImg);
+                break;
+            case tech2Click:
+                gameRules.getTech2(game, ind);
+                break;
+            case scienceUpClick:
                 switch (String.valueOf(event.getEventType())) {
                     case "MOUSE_CLICKED":
                         gameRules.levelUpScience(game, scienceImg);
+                        break;
+                    case "MOUSE_ENTERED":
+
+                        break;
+                    case "MOUSE_EXITED":
+
                         break;
                 }
                 break;

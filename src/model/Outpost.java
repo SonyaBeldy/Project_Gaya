@@ -5,11 +5,11 @@ import javafx.scene.image.Image;
 public class Outpost extends Mine {
 
 
-    public Outpost() {
-        super(6, 2, "./view/resourses/images/buildings/4.png", new int[]{0, 3, 4, 4, 5}, 4);
+    public Outpost(Player player) {
+        super(6, 2, "./view/resourses/images/buildings/" + player.getRace() + "/" + "4.png", new int[]{0, 3, 4, 4, 5}, 4);
         setFitWidth(27);
         setFitHeight(38);
-        setImage(new Image("./view/resourses/images/buildings/4.png"));
+        setImage(new Image("./view/resourses/images/buildings/" + player.getRace() +  "/4.png"));
     }
 
     public Outpost(int gold, int ore, String url, int[] income, int ind) {

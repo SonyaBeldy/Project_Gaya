@@ -8,6 +8,7 @@ public class Hexagon extends ImageView {
     private ImageView image;
     private Point point; // matrix
     private String planet;
+    private boolean checked = false;
     //ужна отдельная матрица с планетами и строениями на них
     public Hexagon(String url, Point point, int hexId) {
         super(url);
@@ -15,9 +16,17 @@ public class Hexagon extends ImageView {
         this.hexId = hexId;
     }
 
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
     public Point getCenter(){
-        double x = image.getFitWidth()/2 + image.getLayoutX();
-        double y = image.getFitHeight()/2 + image.getLayoutY();
+        double x = getFitWidth()/2 + getLayoutX();
+        double y = getFitHeight()/2 + getLayoutY();
         return new Point(x, y);
     }
 
@@ -31,6 +40,10 @@ public class Hexagon extends ImageView {
 
     public Point getPoint() {
         return point;
+    }
+
+    public void setPoint(Point point) {
+        this.point = point;
     }
 
     public int getHexId() {

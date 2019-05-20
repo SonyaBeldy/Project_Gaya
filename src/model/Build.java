@@ -18,4 +18,8 @@ public class Build extends ImageView {
         return false;
     }
 
+    public int getInd () {
+        return 1;
+    }
+
 }

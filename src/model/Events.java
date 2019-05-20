@@ -1,9 +1,13 @@
 package model;
 
 public enum Events {
+    techBtnClick,
+    energTransfer,
     endTurnClick,
-    scienceMapClick,
+    scienceUpClick,
     buildsBtnClick,
-    hexagonOnClick
+    hexagonOnClick,
+    techClick,
+    tech2Click
 
 }
